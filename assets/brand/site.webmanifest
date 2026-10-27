@@ -1,0 +1,19 @@
+{
+  "name": "DevIA Tech",
+  "short_name": "DevIA",
+  "icons": [
+    {
+      "src": "favicon-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#113C39",
+  "background_color": "#113C39",
+  "display": "standalone"
+}

@@ -3,435 +3,416 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DevIA · Soluciones inteligentes</title>
-<meta name="description" content="DevIA: agentes de voz y texto, análisis de datos, automatización de procesos y software a medida. Especialistas en sector salud.">
-<meta name="theme-color" content="#0B1320">
-<meta property="og:title" content="DevIA · Soluciones inteligentes para la transformación digital">
-<meta property="og:description" content="Automatizamos procesos, atendemos a sus usuarios con agentes conversacionales y convertimos sus datos en decisiones.">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<title>DevIA · Ingeniería de software e inteligencia artificial</title>
+<meta name="description" content="DevIA: agentes de IA de voz y texto, soluciones en AWS, software a medida, desarrollo móvil y bases de datos. Equipo certificado en AWS, Anthropic, Azure y Google Cloud.">
+<meta name="theme-color" content="#113C39">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DevIA · Ingeniería de software e inteligencia artificial">
+<meta property="og:description" content="Equipo certificado en AWS, Anthropic, Azure y Google Cloud. Agentes de IA, nube, software a medida y apps móviles.">
+<meta property="og:image" content="assets/brand/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" href="assets/brand/favicon.ico" sizes="any">
+<link rel="icon" href="assets/brand/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/brand/favicon-180.png">
+<link rel="manifest" href="assets/brand/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ink:#0B1320; --ink-2:#111A2B; --ink-3:#18223A;
-  --line:rgba(243,227,220,.09); --line-2:rgba(243,227,220,.16);
-  --cream:#F3E3DC; --text:#E7E2EA; --muted:#9AA1B5;
-  --lilac:#B773E1; --violet:#7C3AED; --plum:#4D1A72;
-  --paper:#F5F6FA; --paper-ink:#141B2D; --paper-muted:#5B6275;
-  --grad:linear-gradient(90deg,var(--cream) 0%,#D9A9E8 45%,var(--lilac) 100%);
-  --r:18px; --max:1180px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;overflow-x:clip}
-body{background:var(--ink);color:var(--text);font-family:Poppins,system-ui,sans-serif;font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-strong{font-weight:600;color:var(--cream)}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--lilac)}
-h1,h2,h3{font-weight:700;line-height:1.12;letter-spacing:-.02em;color:#fff}
-h2{font-size:clamp(1.9rem,3.6vw,2.9rem);margin:.6rem 0 1rem}
-h3{font-size:1.12rem;font-weight:600;letter-spacing:-.01em}
-.lead{font-size:1.05rem;color:var(--muted);max-width:640px}
-section{padding:110px 0;position:relative}
-
-/* nav */
-.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
-.nav.scrolled{background:rgba(11,19,32,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
-.nav img{height:26px;width:auto}
-.nav ul{display:flex;gap:30px;list-style:none;font-size:.88rem;font-weight:400}
-.nav ul a{color:var(--muted);transition:color .2s}
-.nav ul a:hover{color:var(--cream)}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;font-weight:500;font-size:.9rem;transition:transform .2s,box-shadow .2s,background .2s}
-.btn-primary{background:linear-gradient(120deg,var(--violet),var(--lilac));color:#fff;box-shadow:0 10px 30px -10px rgba(124,58,237,.7)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(183,115,225,.8)}
-.btn-ghost{border:1px solid var(--line-2);color:var(--cream)}
-.btn-ghost:hover{background:rgba(243,227,220,.06)}
-.nav .btn{padding:9px 18px;font-size:.82rem}
-
-/* hero */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:140px 0 90px;overflow:hidden;isolation:isolate}
-.hero::before{content:"";position:absolute;inset:0;z-index:-2;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 40%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 40%,transparent 100%)}
-.glow{position:absolute;border-radius:50%;filter:blur(90px);z-index:-1;pointer-events:none}
-.glow.a{width:620px;height:620px;right:-180px;top:-200px;background:radial-gradient(circle,rgba(124,58,237,.55),transparent 65%)}
-.glow.b{width:520px;height:520px;left:-220px;bottom:-200px;background:radial-gradient(circle,rgba(110,30,150,.55),transparent 65%)}
-.glow.c{width:300px;height:300px;right:22%;bottom:12%;background:radial-gradient(circle,rgba(243,227,220,.08),transparent 70%)}
-.hero-logo{width:230px;margin-bottom:56px}
-.hero h1{font-size:clamp(2.6rem,6.4vw,5rem);max-width:900px}
-.hero p{font-size:clamp(1rem,1.5vw,1.15rem);color:var(--muted);max-width:620px;margin:28px 0 34px}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:44px}
-.chip{border:1px solid var(--line-2);background:rgba(243,227,220,.035);padding:8px 16px;border-radius:999px;font-size:.8rem;font-weight:400;color:var(--cream)}
-.cta-row{display:flex;flex-wrap:wrap;gap:14px}
-.hero-foot{position:absolute;bottom:34px;left:0;right:0}
-.hero-foot .wrap{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:18px;font-size:.78rem;color:var(--muted)}
-
-/* about (light) */
-.light{background:var(--paper);color:var(--paper-muted)}
-.light h2,.light h3{color:var(--paper-ink)}
-.light strong{color:var(--paper-ink)}
-.light .eyebrow{color:var(--violet)}
-.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:start}
-.underline{background:linear-gradient(90deg,var(--violet),var(--lilac));-webkit-background-clip:text;background-clip:text;color:transparent;border-bottom:3px solid rgba(124,58,237,.25)}
-.about-copy p{margin-bottom:18px;font-size:1.02rem}
-.stats{display:grid;gap:16px}
-.stat{background:#fff;border:1px solid #E4E6EE;border-radius:var(--r);padding:26px 28px;position:relative;overflow:hidden}
-.stat::after{content:"";position:absolute;left:28px;right:28px;top:76px;height:1px;background:linear-gradient(90deg,var(--violet),transparent)}
-.stat b{display:block;font-size:2.4rem;font-weight:700;color:var(--plum);line-height:1;margin-bottom:26px;letter-spacing:-.03em}
-.stat span{font-size:.9rem}
-.values{margin-top:90px}
-.values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:34px}
-.value{background:#fff;border:1px solid #E4E6EE;border-radius:var(--r);padding:30px;display:flex;gap:20px;transition:transform .25s,box-shadow .25s}
-.value:hover{transform:translateY(-3px);box-shadow:0 20px 40px -24px rgba(20,27,45,.25)}
-.ico{flex:none;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:#F0E8FA;color:var(--violet)}
-.ico svg{width:22px;height:22px}
-.value h3{margin-bottom:8px}
-.value p{font-size:.93rem}
-.banner{margin-top:26px;border-radius:var(--r);padding:34px 40px;display:flex;align-items:center;gap:40px;color:#C9CCD8;
-  background:radial-gradient(circle at 100% 0,rgba(124,58,237,.55),transparent 45%),var(--ink)}
-.banner img{width:150px;flex:none}
-.banner p{font-size:.98rem}
-
-/* services */
-.svc-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px;flex-wrap:wrap}
-.services{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.svc{background:linear-gradient(180deg,var(--ink-2),rgba(17,26,43,.5));border:1px solid var(--line);border-radius:22px;padding:36px;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
-.svc::before{content:"";position:absolute;inset:-1px;border-radius:22px;padding:1px;background:linear-gradient(140deg,rgba(183,115,225,.6),transparent 40%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s}
-.svc:hover{transform:translateY(-4px)}
-.svc:hover::before{opacity:1}
-.svc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
-.svc-num{font-size:.7rem;font-weight:600;letter-spacing:.24em;color:var(--lilac)}
-.svc-top .ico{background:rgba(183,115,225,.12);color:var(--lilac)}
-.svc h3{font-size:1.4rem;color:#fff;margin-bottom:12px}
-.svc>p{color:var(--muted);font-size:.95rem;margin-bottom:22px}
-.svc ul{list-style:none;display:grid;gap:12px;margin-bottom:26px}
-.svc li{position:relative;padding-left:26px;font-size:.9rem;color:#C8CAD6}
-.svc li::before{content:"";position:absolute;left:0;top:.6em;width:12px;height:2px;background:var(--lilac);border-radius:2px}
-.tags{border-top:1px solid var(--line);padding-top:20px}
-.tags small{display:block;font-size:.66rem;letter-spacing:.22em;font-weight:600;color:var(--muted);margin-bottom:10px}
-.tags div{display:flex;flex-wrap:wrap;gap:8px}
-.tag{font-size:.76rem;padding:5px 12px;border-radius:999px;background:rgba(243,227,220,.05);border:1px solid var(--line);color:var(--cream)}
-
-/* sectors */
-.sectors{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px}
-.sector{border-top:2px solid var(--line-2);padding-top:26px}
-.sector:first-child{border-color:var(--lilac)}
-.sector h3{margin-bottom:10px;font-size:1.25rem}
-.sector p{color:var(--muted);font-size:.93rem}
-.sector .badge{display:inline-block;font-size:.66rem;letter-spacing:.2em;font-weight:600;color:var(--lilac);margin-bottom:12px}
-
-/* tech */
-.tech{background:var(--ink-2);border-block:1px solid var(--line)}
-.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:46px}
-.tech-col{background:var(--ink);border:1px solid var(--line);border-radius:var(--r);padding:28px}
-.tech-col small{display:block;font-size:.68rem;letter-spacing:.22em;font-weight:600;color:var(--lilac);margin-bottom:18px}
-.tech-col div{display:flex;flex-wrap:wrap;gap:8px}
-.procs{margin-top:60px}
-.procs h3{font-size:.72rem;letter-spacing:.24em;font-weight:600;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
-.procs div{display:flex;flex-wrap:wrap;gap:10px}
-.procs .tag{font-size:.86rem;padding:9px 18px}
-.security{margin-top:50px;display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start;padding:32px;border-radius:var(--r);border:1px solid rgba(183,115,225,.3);background:linear-gradient(120deg,rgba(124,58,237,.12),transparent 60%)}
-.security .ico{background:rgba(183,115,225,.15);color:var(--lilac);width:52px;height:52px}
-.security h3{margin-bottom:8px;color:#fff}
-.security p{color:#C8CAD6;font-size:.95rem}
-
-/* steps */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;position:relative}
-.steps::before{content:"";position:absolute;top:27px;left:28px;right:28px;height:1px;background:linear-gradient(90deg,var(--lilac),rgba(183,115,225,.1))}
-.step{padding-right:28px;position:relative}
-.step-n{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--ink);border:1px solid var(--lilac);color:var(--cream);font-weight:600;margin-bottom:26px;position:relative}
-.step h3{margin-bottom:10px}
-.step p{color:var(--muted);font-size:.9rem;margin-bottom:16px}
-.step .time{font-size:.68rem;letter-spacing:.18em;font-weight:600;color:var(--lilac)}
-
-/* models */
-.models{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:46px}
-.model{border:1px solid var(--line);border-radius:var(--r);padding:30px;background:var(--ink-2)}
-.model:nth-child(2){background:linear-gradient(160deg,rgba(124,58,237,.25),var(--ink-2) 60%);border-color:rgba(183,115,225,.35)}
-.model small{font-size:.7rem;letter-spacing:.2em;font-weight:600;color:var(--lilac);text-transform:uppercase}
-.model h3{font-size:1.3rem;margin:8px 0 12px}
-.model p{color:var(--muted);font-size:.92rem}
-.expect{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
-.expect>div{padding:28px 30px;border-radius:var(--r);border:1px dashed var(--line-2)}
-.expect h4{font-size:.7rem;letter-spacing:.22em;font-weight:600;color:var(--cream);margin-bottom:14px}
-.expect ul{list-style:none;display:grid;gap:8px}
-.expect li{font-size:.9rem;color:var(--muted);padding-left:22px;position:relative}
-.expect li::before{content:"✓";position:absolute;left:0;color:var(--lilac);font-weight:600}
-
-/* cta */
-.cta{text-align:center;overflow:hidden;isolation:isolate}
-.cta .glow.a{right:auto;left:50%;top:auto;bottom:-380px;transform:translateX(-50%);width:900px;height:600px}
-.cta h2{font-size:clamp(2rem,4.6vw,3.6rem);max-width:820px;margin:16px auto 20px}
-.cta p{margin:0 auto 36px}
-.cta .cta-row{justify-content:center}
-
-footer{border-top:1px solid var(--line);padding:36px 0;font-size:.8rem;color:var(--muted)}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-footer img{height:20px;width:auto}
-
-/* reveal */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
-.rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
-
-@media (max-width:960px){
-  .nav ul{display:none}
-  .about-grid,.services,.values-grid,.expect{grid-template-columns:1fr}
-  .about-grid{gap:40px}
-  .sectors,.tech-grid,.models{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr 1fr;row-gap:40px}
-  .steps::before{display:none}
-  .banner{flex-direction:column;align-items:flex-start;gap:20px;padding:28px}
-}
-@media (max-width:600px){
-  .wrap{padding:0 16px}
-  section{padding:80px 0}
-  .steps{grid-template-columns:1fr}
-  .svc{padding:26px}
-  .value{padding:24px;flex-direction:column;gap:14px}
-  .security{grid-template-columns:1fr;padding:24px}
-  .hero-logo{display:none}
-  .hero-foot{display:none}
-  .nav .btn{display:none}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<link href="assets/css/styles.css" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"DevIA","description":"Ingeniería de software e inteligencia artificial: agentes conversacionales, soluciones en AWS, software a medida, desarrollo móvil y bases de datos.","email":"deviatechsas@gmail.com","logo":"assets/brand/favicon-512.png","areaServed":"Colombia","knowsAbout":["Sector público","Energía","Oil & Gas","Inteligencia artificial","Amazon Web Services","Microsoft Azure","Google Cloud","Anthropic Claude","Desarrollo móvil","Bases de datos"]}
+</script>
 </head>
 <body>
 
-<nav class="nav" id="nav">
+<nav class="nav" id="nav" aria-label="Principal">
   <div class="wrap">
-    <a href="#inicio" aria-label="DevIA inicio"><img src="assets/logo-dark-cream.png" alt="DevIA"></a>
-    <ul>
+    <a class="logo" href="#inicio" aria-label="DevIA, inicio"><img src="assets/brand/devia-principal-oscuro.svg" alt="DevIA Tech" width="219" height="68"></a>
+    <ul id="menu">
       <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#soluciones">Soluciones</a></li>
-      <li><a href="#sectores">Sectores</a></li>
-      <li><a href="#tecnologia">Tecnología</a></li>
-      <li><a href="#empezar">Cómo empezar</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#certificaciones">Certificaciones</a></li>
+      <li><a href="#portafolio">Portafolio</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#sectores">Experiencia</a></li>
+      <li><a href="#contacto">Contacto</a></li>
     </ul>
-    <a class="btn btn-primary" href="#contacto">Agendar demo</a>
+    <a class="btn btn-primary nav-cta js-calendly" href="https://calendly.com/mroserov1/30min" target="_blank" rel="noopener">Agendar reunión</a>
+    <button class="burger" type="button" aria-label="Abrir menú" aria-controls="menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
 </nav>
 
-<header class="hero" id="inicio">
-  <div class="glow a"></div><div class="glow b"></div><div class="glow c"></div>
+<header class="hero dark" id="inicio">
+  <img class="hero-iso" src="assets/brand/devia-isotipo-lima.svg" alt="" aria-hidden="true">
   <div class="wrap">
-    <img class="hero-logo rv" src="assets/logo-light.png" alt="DevIA Artificial Intelligence">
-    <h1 class="rv">Soluciones <span class="grad">inteligentes</span> para la transformación digital.</h1>
-    <p class="rv">Automatizamos procesos, atendemos a sus usuarios con agentes conversacionales y convertimos sus datos en decisiones. Con software construido a la medida de cómo opera su organización.</p>
-    <div class="chips rv">
-      <span class="chip">Agentes de voz y texto</span>
-      <span class="chip">Análisis de datos</span>
-      <span class="chip">Automatización</span>
-      <span class="chip">Software a medida</span>
-    </div>
+    <span class="pill rv">Software · Datos · Inteligencia real</span>
+    <h1 class="rv">Software e <span class="hl">inteligencia artificial</span> que mueven su operación.</h1>
+    <p class="lead muted rv">Implementamos IA en su empresa: agentes de voz y texto, soluciones en AWS, apps móviles y sistemas a medida. Construidos por un equipo certificado, con estándares de calidad de principio a fin.</p>
     <div class="cta-row rv">
-      <a class="btn btn-primary" href="#contacto">Solicitar demostración <span aria-hidden="true">→</span></a>
-      <a class="btn btn-ghost" href="#soluciones">Ver soluciones</a>
+      <a class="btn btn-primary js-calendly" href="https://calendly.com/mroserov1/30min" target="_blank" rel="noopener">Agendar una llamada de 30 min <span class="arr" aria-hidden="true">↗</span></a>
+      <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+    </div>
+    <div class="certs rv">
+      <small>Equipo certificado en</small>
+      <div class="cert-row">
+        <span class="cert"><img src="assets/certs/aws-solutions-architect-associate.png" alt="" width="40" height="40">AWS Solutions Architect</span>
+        <span class="cert"><img src="assets/certs/claude-certified-architect.png" alt="" width="40" height="40">Claude Certified Architect</span>
+        <span class="cert"><img src="assets/certs/azure-fundamentals.png" alt="" width="40" height="40">Microsoft Azure</span>
+        <span class="cert"><img src="assets/certs/gcp-professional-cloud-architect.png" alt="" width="40" height="40">Google Cloud Architect</span>
+      </div>
     </div>
   </div>
-  <div class="hero-foot"><div class="wrap"><span>Especialistas en sector salud y otros sectores estratégicos.</span><span>2026</span></div></div>
 </header>
 
 <section class="light" id="nosotros">
   <div class="wrap">
     <div class="about-grid">
-      <div class="about-copy rv">
-        <span class="eyebrow">Quiénes somos</span>
-        <h2>Automatización inteligente con <span class="underline">criterio de negocio</span>.</h2>
-        <p><strong>DevIA</strong> es una empresa especializada en automatización inteligente y análisis avanzado de datos mediante soluciones conversacionales y tecnologías de inteligencia artificial. Ayudamos a organizaciones del <strong>sector salud</strong> y de otros sectores estratégicos a optimizar procesos, incrementar la eficiencia operativa, mejorar la atención al usuario y tomar decisiones basadas en datos reales.</p>
-        <p>A diferencia de una plataforma cerrada, construimos también el <strong>software a medida</strong> que cada operación necesita: lo que no existe lo desarrollamos, y lo que ya tiene lo integramos.</p>
+      <div class="rv">
+        <span class="pill">Quiénes somos</span>
+        <h2>Tecnología con <span class="hl">criterio de negocio</span>.</h2>
+        <p class="muted">DevIA es una empresa de ingeniería de software e inteligencia artificial. Automatizamos procesos, atendemos a sus usuarios con agentes conversacionales y convertimos sus datos en decisiones.</p>
+        <p class="muted">No vendemos una plataforma cerrada: lo que no existe lo desarrollamos y lo que ya tiene lo integramos. Con experiencia profunda en el <strong>sector salud</strong>.</p>
       </div>
       <div class="stats">
-        <div class="stat rv"><b>24/7</b><span>Atención automatizada por voz, WhatsApp y SMS</span></div>
-        <div class="stat rv"><b>100%</b><span>Trazabilidad de cada interacción y cada proceso</span></div>
-        <div class="stat rv"><b>4</b><span>Líneas de servicio que se combinan según el problema</span></div>
+        <div class="stat rv"><b><span class="count" data-to="4">4</span></b><span>Nubes y plataformas de IA certificadas</span></div>
+        <div class="stat rv"><b><span class="count" data-to="24">24</span>/<span class="count" data-to="7">7</span></b><span>Atención automatizada por voz, WhatsApp y SMS</span></div>
+        <div class="stat rv"><b><span class="count" data-to="100">100</span>%</b><span>Trazabilidad de cada interacción</span></div>
+        <div class="stat rv"><b><span class="count" data-to="9">9</span></b><span>Líneas de servicio que se combinan</span></div>
       </div>
     </div>
 
-    <div class="values">
-      <span class="eyebrow rv">Propuesta de valor</span>
-      <h2 class="rv">Cuatro razones por las que nuestros clientes nos eligen</h2>
-      <div class="values-grid">
-        <div class="value rv">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-          <div><h3>Optimización operativa</h3><p>Reducción significativa de tiempos y costos operativos mediante automatización inteligente de las tareas de mayor volumen.</p></div>
-        </div>
-        <div class="value rv">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg></div>
-          <div><h3>Mejora continua de la atención</h3><p>Comunicación efectiva y constante con pacientes y usuarios finales, sin depender de la disponibilidad de una línea telefónica.</p></div>
-        </div>
-        <div class="value rv">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
-          <div><h3>Decisiones estratégicas informadas</h3><p>Uso eficiente de los datos que ya genera su operación para identificar oportunidades y anticiparse a riesgos potenciales.</p></div>
-        </div>
-        <div class="value rv">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 20v-6M10 20V9M14 20v-8M18 20V5"/></svg></div>
-          <div><h3>Adaptabilidad y escalabilidad</h3><p>Soluciones flexibles que se ajustan a las necesidades específicas de cada organización y crecen con ella, sin rehacer todo.</p></div>
-        </div>
+    <div class="about-features-row">
+      <div class="feature-circle rv">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="18" width="22" height="22" rx="2"/><path d="M11 34l3.5-10 3.5 10M12.3 30.5h4.4M22 24v10"/><path d="M18 18V8h24v16H28"/><circle cx="24" cy="13" r="1.5"/><circle cx="36" cy="19" r="1.5"/><path d="M25.5 13H31l3.5 6"/></svg>
+        <h3>Eficiencia con IA</h3>
       </div>
-      <div class="banner rv">
-        <img src="assets/logo-dark-cream.png" alt="DevIA">
-        <p>Elegimos los procesos donde el volumen es alto y la tarea es repetitiva: ahí la automatización devuelve la inversión rápido. Si un proceso primero debe ordenarse, se lo decimos.</p>
+      <div class="feature-circle rv">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="38" height="26" rx="2"/><path d="M18 41h12M24 33v8"/><rect x="19" y="11" width="10" height="9" rx="1"/><path d="M24 11v9M19 15.5h10"/><path d="M11 27h3M17 25v4M21 27h3M27 25v4M31 27h3M37 25v4"/></svg>
+        <h3>Ingeniería primero</h3>
+      </div>
+      <div class="feature-circle rv">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 14l8 3v6c0 4.6-3.4 8.5-8 9.5-4.6-1-8-4.9-8-9.5v-6z"/><path d="M20.5 23.5l2.5 2.5 5-5"/><path d="M24 9V3M24 45v-6M9 24H3M45 24h-6M13.4 13.4L9 9M39 39l-4.4-4.4M13.4 34.6L9 39M39 9l-4.4 4.4"/><path d="M22 5l2-2 2 2M22 43l2 2 2-2M5 22l-2 2 2 2M43 22l2 2-2 2"/></svg>
+        <h3>Escalable y seguro</h3>
+      </div>
+      <div class="feature-circle rv">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20l8-8h6l4 4v22a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4z"/><path d="M26 16l4-4h6l4 4v22a4 4 0 0 1-4 4h-6"/><circle cx="19" cy="9" r="4"/><circle cx="33" cy="9" r="4"/><circle cx="17" cy="30" r="6"/><path d="M19 27.5c-.5-.7-1.2-1-2-1-1.2 0-2 .7-2 1.6 0 2.2 4 1.3 4 3.6 0 .9-.9 1.7-2 1.7-.9 0-1.6-.4-2-1.1M17 25v1.5M17 33.3v1.5"/></svg>
+        <h3>Precios transparentes</h3>
       </div>
     </div>
   </div>
 </section>
 
-<section id="soluciones">
+<section class="dark" id="servicios">
   <div class="wrap">
-    <div class="svc-head">
+    <div class="sec-head">
       <div class="rv">
-        <span class="eyebrow">Qué ofrecemos</span>
-        <h2>Nuestras soluciones</h2>
+        <span class="pill">Servicios</span>
+        <h2>Servicios y soluciones para una operación moderna</h2>
       </div>
-      <p class="lead rv">Cuatro líneas de servicio que se combinan según el problema: desde atender a un paciente por teléfono hasta construir el sistema completo que soporta la operación.</p>
+      <p class="muted rv">Nueve líneas que se combinan según el problema: desde atender a un paciente por teléfono hasta construir y operar el sistema completo en la nube.</p>
     </div>
 
-    <div class="services">
-      <article class="svc rv">
-        <div class="svc-top"><span class="svc-num">SERVICIO 01</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div></div>
-        <h3>Agentes virtuales inteligentes · voz y texto</h3>
-        <p>Agentes conversacionales que hablan y escriben como su equipo, disponibles todo el día, integrados con su agenda y sus sistemas. Atienden el volumen repetitivo y escalan a una persona cuando hace falta.</p>
-        <ul>
-          <li>Agendamiento y confirmación de citas médicas por llamada telefónica o mensaje (WhatsApp, SMS), con reprogramación y cancelación automática.</li>
-          <li>Seguimiento automático a pacientes para recordatorios, controles médicos y adherencia a tratamientos.</li>
-          <li>Gestión de solicitudes internas y externas mediante interacción conversacional, con registro y ruteo al área responsable.</li>
-        </ul>
-        <div class="tags"><small>CANALES</small><div><span class="tag">Llamada telefónica</span><span class="tag">WhatsApp</span><span class="tag">SMS</span><span class="tag">Chat web</span><span class="tag">Escalamiento a agente humano</span></div></div>
-      </article>
+    <div class="svc-grid" data-parallax-container data-parallax-max="18">
+      <div data-parallax-speed="2"><article class="svc-card">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 9h6v6H9zM9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div>
+        <div><span class="svc-num">01</span><h3>Implementación de IA en su empresa</h3><p>Identificamos dónde la IA genera valor, la integramos a sus sistemas y capacitamos a su equipo. Con gobierno de datos y uso responsable.</p></div>
+        <ul><li>Casos de uso</li><li>Copilotos internos</li><li>LLMs + RAG</li><li>Capacitación</li></ul>
+      </article></div>
+      <div data-parallax-speed="8"><article class="svc-card">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div>
+        <div><span class="svc-num">02</span><h3>Agentes de IA de voz y texto</h3><p>Agendan, confirman y hacen seguimiento por llamada, WhatsApp o SMS. Escalan a una persona cuando hace falta.</p></div>
+        <ul><li>Voz</li><li>WhatsApp</li><li>SMS</li><li>Claude</li></ul>
+      </article></div>
+      <div data-parallax-speed="2"><article class="svc-card">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4.5 4.5 0 0 1-.6-9 6 6 0 0 1 11.4 1.5A3.8 3.8 0 0 1 17.5 18z"/></svg></div>
+        <div><span class="svc-num">03</span><h3>Soluciones en AWS</h3><p>Arquitectura, migración y operación en AWS diseñadas por arquitectos certificados. Serverless, contenedores e IA generativa con costos bajo control.</p></div>
+        <ul><li>Lambda</li><li>ECS</li><li>Bedrock</li><li>RDS</li></ul>
+      </article></div>
+      <div data-parallax-speed="2"><article class="svc-card">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div>
+        <div><span class="svc-num">04</span><h3>Software a medida</h3><p>Portales, back offices, APIs y modernización de sistemas heredados, integrados con lo que ya tiene.</p></div>
+        <ul><li>Java</li><li>Python</li><li>Node.js</li><li>React</li></ul>
+      </article></div>
+      <div data-parallax-speed="8"><article class="svc-card">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
+        <div><span class="svc-num">05</span><h3>Desarrollo móvil</h3><p>Apps iOS y Android nativas o multiplataforma, con publicación en tiendas y analítica de uso.</p></div>
+        <ul><li>Flutter</li><li>React Native</li><li>Swift</li><li>Kotlin</li></ul>
+      </article></div>
+      <div data-parallax-speed="2"><article class="svc-card">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><ellipse cx="12" cy="5.5" rx="7" ry="2.5"/><path d="M5 5.5v13c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-13M5 12c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5"/></svg></div>
+        <div><span class="svc-num">06</span><h3>Bases de datos</h3><p>Diseño, migración, rendimiento y alta disponibilidad. Datos íntegros, respaldados y rápidos de consultar.</p></div>
+        <ul><li>PostgreSQL</li><li>SQL Server</li><li>MongoDB</li><li>DynamoDB</li></ul>
+      </article></div>
+      <div data-parallax-speed="2"><article class="svc-card">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 20v-6M10 20V9M14 20v-8M18 20V5"/></svg></div>
+        <div><span class="svc-num">07</span><h3>Datos y analítica</h3><p>Tableros en vivo, modelos predictivos y alertas que llegan a tiempo a quien debe decidir.</p></div>
+        <ul><li>Power BI</li><li>Pronósticos</li><li>Alertas</li></ul>
+      </article></div>
+      <div data-parallax-speed="8"><article class="svc-card">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11M4 17h7"/><path d="M15 4l3 3-3 3M11 14l3 3-3 3"/></svg></div>
+        <div><span class="svc-num">08</span><h3>Automatización de procesos</h3><p>Órdenes médicas, autorizaciones y flujos con aprobaciones, sin trabajo manual repetitivo.</p></div>
+        <ul><li>OCR</li><li>Reglas</li><li>Auditoría</li></ul>
+      </article></div>
+      <div data-parallax-speed="2"><article class="svc-card">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></div>
+        <div><span class="svc-num">09</span><h3>Azure y Google Cloud</h3><p>Si su organización ya opera en Azure o GCP, desplegamos e integramos ahí, con el mismo rigor.</p></div>
+        <ul><li>Azure</li><li>GCP</li><li>Kubernetes</li></ul>
+      </article></div>
+    </div>
+  </div>
+</section>
 
-      <article class="svc rv">
-        <div class="svc-top"><span class="svc-num">SERVICIO 02</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M7 15l4-4 3 3 5-6"/></svg></div></div>
-        <h3>Análisis avanzado de datos</h3>
-        <p>Convertimos la información que su organización ya produce en indicadores, pronósticos y alertas que llegan a tiempo a quien debe decidir.</p>
-        <ul>
-          <li>Predicción y optimización de la demanda en servicios de salud: ocupación, agenda, inasistencia y capacidad instalada.</li>
-          <li>Análisis inteligente de información financiera y administrativa interna, con detección de desviaciones y anomalías.</li>
-          <li>Reportes automatizados en tiempo real para la toma de decisiones estratégicas, sin consolidación manual.</li>
-        </ul>
-        <div class="tags"><small>ENTREGABLES</small><div><span class="tag">Tableros en vivo</span><span class="tag">Modelos predictivos</span><span class="tag">Alertas automáticas</span><span class="tag">Reportes programados</span></div></div>
-      </article>
+<section class="light" id="certificaciones">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv">
+        <span class="pill">Certificaciones</span>
+        <h2>Un equipo <span class="hl">certificado</span> en las nubes que importan</h2>
+      </div>
+      <p class="muted rv">Las certificaciones no son un adorno: definen cómo diseñamos arquitecturas seguras, costos predecibles y sistemas que escalan.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card rv"><img class="badge" src="assets/certs/aws-solutions-architect-associate.png" alt="Insignia AWS Certified Solutions Architect – Associate" width="120" height="120" loading="lazy"><h3>AWS Certified Solutions Architect</h3><p>Arquitecturas bien diseñadas en AWS: seguridad, confiabilidad, rendimiento y costos.</p></div>
+      <div class="cert-card rv"><img class="badge" src="assets/certs/claude-certified-architect.png" alt="Insignia Claude Certified Architect de Anthropic" width="120" height="120" loading="lazy"><h3>Claude Certified Architect</h3><p>Agentes y aplicaciones con Claude: prompts, herramientas, RAG y evaluación.</p></div>
+      <div class="cert-card rv"><img class="badge" src="assets/certs/azure-fundamentals.png" alt="Insignia Microsoft Certified: Azure Fundamentals" width="120" height="120" loading="lazy"><h3>Microsoft Certified: Azure</h3><p>Despliegue e integración con el ecosistema Microsoft y Azure OpenAI.</p></div>
+      <div class="cert-card rv"><img class="badge" src="assets/certs/gcp-professional-cloud-architect.png" alt="Insignia Google Cloud Professional Cloud Architect" width="120" height="120" loading="lazy"><h3>Google Cloud Professional Architect</h3><p>Infraestructura, datos y servicios de IA sobre Google Cloud Platform.</p></div>
+    </div>
+    <div class="team rv">
+      <div>
+        <span class="pill">Nuestro equipo</span>
+        <h3>Desarrolladores senior que escriben software para durar.</h3>
+        <p class="muted">Un grupo de ingenieros altamente capacitados en backend, frontend, móvil, datos y nube. Cada entrega sigue los mismos estándares, sea un piloto o un sistema crítico.</p>
+      </div>
+      <ul class="checks">
+        <li>Revisión de código obligatoria en cada cambio</li>
+        <li>Pruebas automatizadas y CI/CD desde el día uno</li>
+        <li>Seguridad por diseño: OWASP, cifrado y control de accesos</li>
+        <li>Infraestructura como código y ambientes reproducibles</li>
+        <li>Documentación y entrega del repositorio al cliente</li>
+        <li>Metodologías ágiles: Scrum y Kanban</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-      <article class="svc rv">
-        <div class="svc-top"><span class="svc-num">SERVICIO 03</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11M4 17h7"/><path d="M15 4l3 3-3 3M11 14l3 3-3 3"/><circle cx="19" cy="17" r="1.5"/></svg></div></div>
-        <h3>Automatización de procesos internos</h3>
-        <p>Eliminamos el trabajo manual que hoy consume a los equipos administrativos y asistenciales, conservando el control humano donde el criterio clínico o normativo lo exige.</p>
-        <ul>
-          <li>Generación automática y validación inteligente de órdenes médicas y solicitudes de exámenes, con reglas de negocio configurables.</li>
-          <li>Automatización de procesos administrativos complejos con múltiples áreas, aprobaciones y sistemas involucrados.</li>
-          <li>Optimización del flujo y la trazabilidad de la información dentro y fuera de la organización.</li>
-        </ul>
-        <div class="tags"><small>INCLUYE</small><div><span class="tag">Extracción de documentos</span><span class="tag">Reglas de validación</span><span class="tag">Bandeja de excepciones</span><span class="tag">Auditoría y trazabilidad</span></div></div>
+<section class="dark" id="portafolio">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="rv">
+        <span class="pill">Portafolio</span>
+        <h2>Lo que implementamos</h2>
+      </div>
+      <p class="muted rv">Tipos de proyecto que entregamos con frecuencia. En la reunión le mostramos casos concretos de su sector.</p>
+    </div>
+    <div class="work-grid">
+      <article class="work-card rv">
+        <div class="work-art" style="background:#FF9900"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4.5 4.5 0 0 1-.6-9 6 6 0 0 1 11.4 1.5A3.8 3.8 0 0 1 17.5 18z"/><path d="M12 11v5M10 13l2-2 2 2"/></svg></div>
+        <div class="work-body"><small>AWS · Migración</small><h3>Migración de plataforma a AWS</h3><p>Sistema heredado llevado por fases a contenedores y bases administradas, sin detener la operación.</p><div class="tags"><span class="tag"><img src="assets/tech/amazonwebservices.svg" alt="" width="16" height="16" loading="lazy">AWS</span><span class="tag"><img src="assets/tech/docker.svg" alt="" width="16" height="16" loading="lazy">Docker</span><span class="tag"><img src="assets/tech/terraform.svg" alt="" width="16" height="16" loading="lazy">Terraform</span><span class="tag"><img src="assets/tech/postgresql.svg" alt="" width="16" height="16" loading="lazy">PostgreSQL</span></div></div>
       </article>
-
-      <article class="svc rv">
-        <div class="svc-top"><span class="svc-num">SERVICIO 04</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div></div>
-        <h3>Desarrollo de software a medida</h3>
-        <p>Cuando el software del mercado obliga a su organización a cambiar cómo trabaja, el problema no es su proceso. Diseñamos y construimos el sistema que su operación necesita, integrado con lo que ya existe.</p>
-        <ul>
-          <li><strong>Aplicaciones y portales de negocio:</strong> sistemas internos, portales de pacientes o proveedores, back offices y paneles de gestión con roles, flujos de aprobación y auditoría.</li>
-          <li><strong>Integraciones y APIs:</strong> conectamos historia clínica, ERP, facturación, agendamiento, pasarelas de pago y plataformas de terceros.</li>
-          <li><strong>Modernización de sistemas heredados:</strong> migración por fases, sin apagar la operación, hacia una arquitectura mantenible y en la nube.</li>
-          <li><strong>Cloud y despliegue continuo:</strong> infraestructura dimensionada a su operación real, con respaldos, monitoreo y despliegues automatizados.</li>
-        </ul>
-        <div class="tags"><small>AL FINALIZAR RECIBE</small><div><span class="tag">Sistema en producción</span><span class="tag">Código y repositorio</span><span class="tag">Documentación</span><span class="tag">Capacitación</span><span class="tag">Garantía y soporte</span></div></div>
+      <article class="work-card rv">
+        <div class="work-art" style="background:var(--lime)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div>
+        <div class="work-body"><small>IA · Salud</small><h3>Agente de voz para citas médicas</h3><p>Agenda, confirma y reprograma citas por teléfono y WhatsApp, integrado al sistema de la clínica.</p><div class="tags"><span class="tag"><img src="assets/tech/claude.svg" alt="" width="16" height="16" loading="lazy">Claude</span><span class="tag"><img src="assets/tech/python.svg" alt="" width="16" height="16" loading="lazy">Python</span><span class="tag"><img src="assets/tech/fastapi.svg" alt="" width="16" height="16" loading="lazy">FastAPI</span><span class="tag"><img src="assets/tech/n8n.svg" alt="" width="16" height="16" loading="lazy">n8n</span></div></div>
+      </article>
+      <article class="work-card rv">
+        <div class="work-art" style="background:#ABC28A"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></div>
+        <div class="work-body"><small>AWS · IA generativa</small><h3>Asistente con RAG serverless</h3><p>Búsqueda conversacional sobre documentos internos, con control de acceso por rol.</p><div class="tags"><span class="tag"><img src="assets/tech/amazonwebservices.svg" alt="" width="16" height="16" loading="lazy">AWS</span><span class="tag"><img src="assets/tech/claude.svg" alt="" width="16" height="16" loading="lazy">Claude</span><span class="tag"><img src="assets/tech/langchain.svg" alt="" width="16" height="16" loading="lazy">LangChain</span><span class="tag"><img src="assets/tech/python.svg" alt="" width="16" height="16" loading="lazy">Python</span></div></div>
+      </article>
+      <article class="work-card rv">
+        <div class="work-art" style="background:#8AB4F8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
+        <div class="work-body"><small>Móvil</small><h3>App de pacientes</h3><p>Citas, resultados y recordatorios en una app iOS y Android con notificaciones push.</p><div class="tags"><span class="tag"><img src="assets/tech/flutter.svg" alt="" width="16" height="16" loading="lazy">Flutter</span><span class="tag"><img src="assets/tech/firebase.svg" alt="" width="16" height="16" loading="lazy">Firebase</span><span class="tag"><img src="assets/tech/nestjs.svg" alt="" width="16" height="16" loading="lazy">NestJS</span></div></div>
+      </article>
+      <article class="work-card rv">
+        <div class="work-art" style="background:#F2C98A"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><ellipse cx="12" cy="5.5" rx="7" ry="2.5"/><path d="M5 5.5v13c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-13M5 12c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5"/></svg></div>
+        <div class="work-body"><small>Bases de datos</small><h3>Modernización de base de datos</h3><p>Rediseño del modelo, índices y réplicas para consultas más rápidas y alta disponibilidad.</p><div class="tags"><span class="tag"><img src="assets/tech/oracle.svg" alt="" width="16" height="16" loading="lazy">Oracle</span><span class="tag"><img src="assets/tech/microsoftsqlserver.svg" alt="" width="16" height="16" loading="lazy">SQL Server</span><span class="tag"><img src="assets/tech/postgresql.svg" alt="" width="16" height="16" loading="lazy">PostgreSQL</span><span class="tag"><img src="assets/tech/apacheairflow.svg" alt="" width="16" height="16" loading="lazy">Airflow · ETL</span></div></div>
+      </article>
+      <article class="work-card rv">
+        <div class="work-art" style="background:#DFEACE"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+        <div class="work-body"><small>Datos</small><h3>Predicción de demanda</h3><p>Pronóstico de ocupación e inasistencia para planear agenda y capacidad instalada.</p><div class="tags"><span class="tag"><img src="assets/tech/python.svg" alt="" width="16" height="16" loading="lazy">Python</span><span class="tag"><img src="assets/tech/fastapi.svg" alt="" width="16" height="16" loading="lazy">FastAPI</span><span class="tag"><img src="assets/tech/apacheairflow.svg" alt="" width="16" height="16" loading="lazy">Airflow · ETL</span><span class="tag"><img src="assets/tech/angular.svg" alt="" width="16" height="16" loading="lazy">Angular</span></div></div>
       </article>
     </div>
   </div>
 </section>
 
-<section id="sectores" style="padding-top:40px">
+<section class="light" id="proceso">
   <div class="wrap">
-    <span class="eyebrow rv">Dónde aplicamos</span>
-    <h2 class="rv">Salud primero, y todo proceso repetitivo después</h2>
-    <p class="lead rv">Nuestra experiencia se concentra en el sector salud, donde el volumen de interacciones y la carga administrativa son mayores. La misma tecnología aplica a cualquier organización con procesos intensivos en comunicación y documentos.</p>
-    <div class="sectors">
-      <div class="sector rv"><span class="badge">FOCO PRINCIPAL</span><h3>Salud</h3><p>IPS, clínicas, EPS, laboratorios y centros especializados: agendamiento, confirmación, órdenes médicas, autorizaciones y seguimiento a pacientes.</p></div>
-      <div class="sector rv"><span class="badge">&nbsp;</span><h3>Servicios y sector financiero</h3><p>Atención de solicitudes, verificación documental, conciliaciones, cobranza preventiva y reportes regulatorios.</p></div>
-      <div class="sector rv"><span class="badge">&nbsp;</span><h3>Operación y logística</h3><p>Coordinación con proveedores, seguimiento de órdenes, trazabilidad de inventario y pronóstico de demanda.</p></div>
+    <div class="process-head rv">
+      <span class="pill">Cómo trabajamos</span>
+      <h2>Cómo convertimos un reto en una solución que funciona</h2>
+      <p class="muted" style="margin-top:16px">Paso a paso, con resultados visibles desde las primeras semanas.</p>
+    </div>
+    <div class="process">
+      <div class="process-left">
+        <div class="process-sticky">
+          <div class="process-counter" aria-hidden="true"><span id="process-current">1</span>/<span id="process-total">4</span></div>
+          <div class="process-track"><span></span></div>
+        </div>
+      </div>
+      <div class="process-right">
+        <div class="process-item">
+          <div class="process-dot"></div>
+          <div class="process-card" style="background:#DFEACE">
+            <span class="step">Paso 01 · 30 min, sin costo</span>
+            <span class="process-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></span>
+            <h3>Reunión inicial</h3>
+            <p>Entendemos su operación y le mostramos soluciones funcionando.</p>
+            <ul class="checks"><li>Identificamos el proceso con más retorno</li><li>Resolvemos dudas técnicas y de seguridad</li></ul>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-dot"></div>
+          <div class="process-card" style="background:#E3EFEA">
+            <span class="step">Paso 02 · 3 a 5 días</span>
+            <span class="process-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+            <h3>Diagnóstico y propuesta</h3>
+            <p>Mapeamos el proceso, medimos su costo actual y entregamos alcance, cronograma e inversión cerrados.</p>
+            <ul class="checks"><li>Arquitectura propuesta</li><li>Indicadores de éxito definidos</li></ul>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-dot"></div>
+          <div class="process-card" style="background:#F1F6D6">
+            <span class="step">Paso 03 · 2 a 6 semanas</span>
+            <span class="process-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></span>
+            <h3>Construcción y piloto</h3>
+            <p>Desarrollamos con entregas cortas y validamos sobre casos reales.</p>
+            <ul class="checks"><li>Demos cada semana</li><li>Pruebas automatizadas y despliegue continuo</li></ul>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-dot"></div>
+          <div class="process-card" style="background:#FBE7CF">
+            <span class="step">Paso 04 · Progresivo</span>
+            <span class="process-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15c-2-2-3-5-1-10 5 1 7 4 7 8l-3 3z"/><path d="M9 14l-4 1 3-4M10 15l-1 4 4-3"/></svg></span>
+            <h3>Lanzamiento y mejora</h3>
+            <p>Escalamos a más procesos y áreas, con monitoreo y acompañamiento continuo.</p>
+            <ul class="checks"><li>Capacitación a su equipo</li><li>Soporte y optimización de costos</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="method">
+      <div class="sec-head">
+        <div class="rv">
+          <span class="pill">Metodología</span>
+          <h2>Ágiles en la forma, <span class="hl">rigurosos</span> en la entrega</h2>
+        </div>
+        <p class="muted rv">Elegimos el marco según el tipo de trabajo y lo hacemos visible para su equipo desde el primer día.</p>
+      </div>
+      <div class="method-grid">
+        <div class="method-card rv">
+          <h3>Scrum</h3>
+          <p class="muted">Sprints de una a dos semanas con objetivo claro, demo al final de cada uno y retrospectiva para mejorar.</p>
+          <div class="tags"><span class="tag">Sprints</span><span class="tag">Demos</span><span class="tag">Backlog priorizado</span></div>
+        </div>
+        <div class="method-card rv">
+          <h3>Kanban</h3>
+          <p class="muted">Flujo continuo para soporte, mejoras y operación, con límites de trabajo en curso y tiempos de respuesta medidos.</p>
+          <div class="tags"><span class="tag">Flujo continuo</span><span class="tag">WIP</span><span class="tag">SLA</span></div>
+        </div>
+        <div class="method-card hi rv">
+          <h3>IA responsable y segura</h3>
+          <p class="muted">Usamos agentes de IA especializados (código, pruebas, revisión, documentación), siempre supervisados por un ingeniero. Sus datos no entrenan modelos de terceros.</p>
+          <div class="tags"><span class="tag">Agentes especializados</span><span class="tag">Revisión humana</span><span class="tag">Privacidad</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="tech" id="tecnologia">
+<section class="dark" id="sectores">
   <div class="wrap">
-    <span class="eyebrow rv">Tecnología</span>
-    <h2 class="rv">Herramientas maduras, elegidas por el problema</h2>
-    <div class="tech-grid">
-      <div class="tech-col rv"><small>IA Y CONVERSACIÓN</small><div><span class="tag">LLMs</span><span class="tag">RAG</span><span class="tag">Voz (STT / TTS)</span><span class="tag">NLP</span><span class="tag">OCR</span><span class="tag">Bases vectoriales</span><span class="tag">MLOps</span></div></div>
-      <div class="tech-col rv"><small>DESARROLLO</small><div><span class="tag">Java · Spring Boot</span><span class="tag">Python</span><span class="tag">Node.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">APIs REST</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span></div></div>
-      <div class="tech-col rv"><small>NUBE E INTEGRACIÓN</small><div><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">CI/CD</span><span class="tag">WhatsApp Business API</span><span class="tag">Telefonía IP</span><span class="tag">HL7 / FHIR</span><span class="tag">ERP y HIS</span></div></div>
+    <div class="sec-head">
+      <div class="rv">
+        <span class="pill">Experiencia</span>
+        <h2>Sector público y privado, en Colombia y fuera de ella</h2>
+      </div>
+      <p class="muted rv">Trabajamos con empresas nacionales e internacionales y con entidades del Estado colombiano, incluida la contratación pública.</p>
     </div>
-
-    <div class="procs rv">
-      <h3>Procesos que automatizamos con más frecuencia</h3>
-      <div><span class="tag">Agendamiento de citas</span><span class="tag">Confirmación y recordatorios</span><span class="tag">Reprogramación y cancelación</span><span class="tag">Órdenes médicas</span><span class="tag">Solicitud de exámenes</span><span class="tag">Autorizaciones</span><span class="tag">Encuestas de satisfacción</span><span class="tag">Mesa de ayuda interna</span></div>
+    <div class="sector-grid">
+      <div class="sector rv"><h3>Gobierno y sector público</h3><p class="muted">MinTIC y entidades del Estado. Experiencia en contratación pública.</p></div>
+      <div class="sector rv"><h3>Energía</h3><p class="muted">Gestión operativa, analítica de consumo y automatización de procesos.</p></div>
+      <div class="sector rv"><h3>Oil &amp; Gas</h3><p class="muted">Plataformas de operación, integración de datos de campo y reportes.</p></div>
+      <div class="sector rv"><h3>Salud</h3><p class="muted">IPS, clínicas y EPS: citas, órdenes médicas y seguimiento a pacientes.</p></div>
+      <div class="sector rv"><h3>Educación</h3><p class="muted">Plataformas académicas, portales y automatización administrativa.</p></div>
+      <div class="sector rv"><h3>Servicios financieros</h3><p class="muted">Verificación documental, conciliaciones y reportes regulatorios.</p></div>
+      <div class="sector rv"><h3>Transporte y logística</h3><p class="muted">Seguimiento de órdenes, trazabilidad y pronóstico de demanda.</p></div>
+      <div class="sector rv"><h3>Reciclaje y medio ambiente</h3><p class="muted">Trazabilidad de materiales, operación en campo y reportes de impacto.</p></div>
     </div>
-
+    <div class="projects rv">
+      <h3>Tipos de proyecto que hemos entregado</h3>
+      <div><span class="tag">ERP</span><span class="tag">ERM</span><span class="tag">Plataformas SaaS</span><span class="tag">Migraciones completas a la nube</span><span class="tag">Integración de sistemas</span><span class="tag">IA y nuevas tecnologías</span><span class="tag">Contratación con el Estado</span></div>
+    </div>
     <div class="security rv">
-      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
-      <div><h3>Seguridad y datos sensibles</h3><p>Trabajamos con información clínica y financiera, y eso define cómo diseñamos: control de accesos por rol, cifrado en tránsito y en reposo, registro de auditoría de cada interacción, y acuerdos claros sobre qué datos procesa la IA y dónde se almacenan. Cuando el caso lo exige, desplegamos dentro de la nube de su organización.</p></div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+      <div><h3>Seguridad y datos sensibles</h3><p class="muted">Control de accesos por rol, cifrado en tránsito y en reposo, auditoría de cada interacción y acuerdos claros sobre qué datos procesa la IA. Cuando el caso lo exige, desplegamos dentro de la nube de su organización.</p></div>
     </div>
   </div>
 </section>
 
-<section id="empezar">
+<section class="light" id="tecnologia">
   <div class="wrap">
-    <span class="eyebrow rv">Cómo empezar</span>
-    <h2 class="rv">De la primera reunión a la primera automatización</h2>
-    <div class="steps">
-      <div class="step rv"><div class="step-n">01</div><h3>Demostración</h3><p>Le mostramos agentes de voz y texto funcionando y evaluamos juntos las áreas prioritarias de su organización.</p><span class="time">20 MINUTOS · SIN COSTO</span></div>
-      <div class="step rv"><div class="step-n">02</div><h3>Diagnóstico y propuesta</h3><p>Mapeamos el proceso elegido, medimos su costo actual y entregamos alcance, cronograma e inversión cerrados.</p><span class="time">3 A 5 DÍAS</span></div>
-      <div class="step rv"><div class="step-n">03</div><h3>Piloto medible</h3><p>Implementamos una primera solución acotada, con indicadores definidos de antemano para validar el retorno.</p><span class="time">2 A 6 SEMANAS</span></div>
-      <div class="step rv"><div class="step-n">04</div><h3>Escalamiento</h3><p>Extendemos a más procesos y áreas, con capacitación al equipo interno y acompañamiento continuo.</p><span class="time">PROGRESIVO</span></div>
+    <div class="sec-head">
+      <div class="rv">
+        <span class="pill">Tecnología</span>
+        <h2>Herramientas maduras, elegidas por el problema</h2>
+      </div>
+    </div>
+    <div class="marquee">
+      <ul class="marquee-track" aria-label="Nube, web y móvil"><li><img src="assets/tech/amazonwebservices.svg" alt="" width="32" height="32" loading="lazy"><span>AWS</span></li><li><img src="assets/tech/azure.svg" alt="" width="32" height="32" loading="lazy"><span>Azure</span></li><li><img src="assets/tech/googlecloud.svg" alt="" width="32" height="32" loading="lazy"><span>Google Cloud</span></li><li><img src="assets/tech/angular.svg" alt="" width="32" height="32" loading="lazy"><span>Angular</span></li><li><img src="assets/tech/react.svg" alt="" width="32" height="32" loading="lazy"><span>React</span></li><li><img src="assets/tech/nextjs.svg" alt="" width="32" height="32" loading="lazy"><span>Next.js</span></li><li><img src="assets/tech/vuejs.svg" alt="" width="32" height="32" loading="lazy"><span>Vue</span></li><li><img src="assets/tech/nuxtjs.svg" alt="" width="32" height="32" loading="lazy"><span>Nuxt</span></li><li><img src="assets/tech/svelte.svg" alt="" width="32" height="32" loading="lazy"><span>Svelte</span></li><li><img src="assets/tech/nestjs.svg" alt="" width="32" height="32" loading="lazy"><span>NestJS</span></li><li><img src="assets/tech/typescript.svg" alt="" width="32" height="32" loading="lazy"><span>TypeScript</span></li><li><img src="assets/tech/nodejs.svg" alt="" width="32" height="32" loading="lazy"><span>Node.js</span></li><li><img src="assets/tech/laravel.svg" alt="" width="32" height="32" loading="lazy"><span>Laravel</span></li><li><img src="assets/tech/php.svg" alt="" width="32" height="32" loading="lazy"><span>PHP</span></li><li><img src="assets/tech/flutter.svg" alt="" width="32" height="32" loading="lazy"><span>Flutter</span></li><li><img src="assets/tech/kotlin.svg" alt="" width="32" height="32" loading="lazy"><span>Kotlin</span></li><li><img src="assets/tech/swift.svg" alt="" width="32" height="32" loading="lazy"><span>Swift</span></li></ul>
+      <ul class="marquee-track" aria-hidden="true"><li><img src="assets/tech/amazonwebservices.svg" alt="" width="32" height="32" loading="lazy"><span>AWS</span></li><li><img src="assets/tech/azure.svg" alt="" width="32" height="32" loading="lazy"><span>Azure</span></li><li><img src="assets/tech/googlecloud.svg" alt="" width="32" height="32" loading="lazy"><span>Google Cloud</span></li><li><img src="assets/tech/angular.svg" alt="" width="32" height="32" loading="lazy"><span>Angular</span></li><li><img src="assets/tech/react.svg" alt="" width="32" height="32" loading="lazy"><span>React</span></li><li><img src="assets/tech/nextjs.svg" alt="" width="32" height="32" loading="lazy"><span>Next.js</span></li><li><img src="assets/tech/vuejs.svg" alt="" width="32" height="32" loading="lazy"><span>Vue</span></li><li><img src="assets/tech/nuxtjs.svg" alt="" width="32" height="32" loading="lazy"><span>Nuxt</span></li><li><img src="assets/tech/svelte.svg" alt="" width="32" height="32" loading="lazy"><span>Svelte</span></li><li><img src="assets/tech/nestjs.svg" alt="" width="32" height="32" loading="lazy"><span>NestJS</span></li><li><img src="assets/tech/typescript.svg" alt="" width="32" height="32" loading="lazy"><span>TypeScript</span></li><li><img src="assets/tech/nodejs.svg" alt="" width="32" height="32" loading="lazy"><span>Node.js</span></li><li><img src="assets/tech/laravel.svg" alt="" width="32" height="32" loading="lazy"><span>Laravel</span></li><li><img src="assets/tech/php.svg" alt="" width="32" height="32" loading="lazy"><span>PHP</span></li><li><img src="assets/tech/flutter.svg" alt="" width="32" height="32" loading="lazy"><span>Flutter</span></li><li><img src="assets/tech/kotlin.svg" alt="" width="32" height="32" loading="lazy"><span>Kotlin</span></li><li><img src="assets/tech/swift.svg" alt="" width="32" height="32" loading="lazy"><span>Swift</span></li></ul>
+    </div>
+    <div class="marquee marquee-reverse">
+      <ul class="marquee-track" aria-label="Backend y datos"><li><img src="assets/tech/java.svg" alt="" width="32" height="32" loading="lazy"><span>Java</span></li><li><img src="assets/tech/spring.svg" alt="" width="32" height="32" loading="lazy"><span>Spring</span></li><li><img src="assets/tech/dotnetcore.svg" alt="" width="32" height="32" loading="lazy"><span>.NET</span></li><li><img src="assets/tech/csharp.svg" alt="" width="32" height="32" loading="lazy"><span>C#</span></li><li><img src="assets/tech/python.svg" alt="" width="32" height="32" loading="lazy"><span>Python</span></li><li><img src="assets/tech/fastapi.svg" alt="" width="32" height="32" loading="lazy"><span>FastAPI</span></li><li><img src="assets/tech/django.svg" alt="" width="32" height="32" loading="lazy"><span>Django</span></li><li><img src="assets/tech/rust.svg" alt="" width="32" height="32" loading="lazy"><span>Rust</span></li><li><img src="assets/tech/postgresql.svg" alt="" width="32" height="32" loading="lazy"><span>PostgreSQL</span></li><li><img src="assets/tech/oracle.svg" alt="" width="32" height="32" loading="lazy"><span>Oracle</span></li><li><img src="assets/tech/microsoftsqlserver.svg" alt="" width="32" height="32" loading="lazy"><span>SQL Server</span></li><li><img src="assets/tech/mysql.svg" alt="" width="32" height="32" loading="lazy"><span>MySQL</span></li><li><img src="assets/tech/mongodb.svg" alt="" width="32" height="32" loading="lazy"><span>MongoDB</span></li><li><img src="assets/tech/dynamodb.svg" alt="" width="32" height="32" loading="lazy"><span>DynamoDB</span></li><li><img src="assets/tech/firebase.svg" alt="" width="32" height="32" loading="lazy"><span>Firebase</span></li><li><img src="assets/tech/apacheairflow.svg" alt="" width="32" height="32" loading="lazy"><span>Airflow · ETL</span></li></ul>
+      <ul class="marquee-track" aria-hidden="true"><li><img src="assets/tech/java.svg" alt="" width="32" height="32" loading="lazy"><span>Java</span></li><li><img src="assets/tech/spring.svg" alt="" width="32" height="32" loading="lazy"><span>Spring</span></li><li><img src="assets/tech/dotnetcore.svg" alt="" width="32" height="32" loading="lazy"><span>.NET</span></li><li><img src="assets/tech/csharp.svg" alt="" width="32" height="32" loading="lazy"><span>C#</span></li><li><img src="assets/tech/python.svg" alt="" width="32" height="32" loading="lazy"><span>Python</span></li><li><img src="assets/tech/fastapi.svg" alt="" width="32" height="32" loading="lazy"><span>FastAPI</span></li><li><img src="assets/tech/django.svg" alt="" width="32" height="32" loading="lazy"><span>Django</span></li><li><img src="assets/tech/rust.svg" alt="" width="32" height="32" loading="lazy"><span>Rust</span></li><li><img src="assets/tech/postgresql.svg" alt="" width="32" height="32" loading="lazy"><span>PostgreSQL</span></li><li><img src="assets/tech/oracle.svg" alt="" width="32" height="32" loading="lazy"><span>Oracle</span></li><li><img src="assets/tech/microsoftsqlserver.svg" alt="" width="32" height="32" loading="lazy"><span>SQL Server</span></li><li><img src="assets/tech/mysql.svg" alt="" width="32" height="32" loading="lazy"><span>MySQL</span></li><li><img src="assets/tech/mongodb.svg" alt="" width="32" height="32" loading="lazy"><span>MongoDB</span></li><li><img src="assets/tech/dynamodb.svg" alt="" width="32" height="32" loading="lazy"><span>DynamoDB</span></li><li><img src="assets/tech/firebase.svg" alt="" width="32" height="32" loading="lazy"><span>Firebase</span></li><li><img src="assets/tech/apacheairflow.svg" alt="" width="32" height="32" loading="lazy"><span>Airflow · ETL</span></li></ul>
+    </div>
+    <div class="marquee">
+      <ul class="marquee-track" aria-label="IA, automatización y DevOps"><li><img src="assets/tech/claude.svg" alt="" width="32" height="32" loading="lazy"><span>Claude</span></li><li><img src="assets/tech/googlegemini.svg" alt="" width="32" height="32" loading="lazy"><span>Gemini</span></li><li><img src="assets/tech/openai.svg" alt="" width="32" height="32" loading="lazy"><span>ChatGPT</span></li><li><img src="assets/tech/langchain.svg" alt="" width="32" height="32" loading="lazy"><span>LangChain</span></li><li><img src="assets/tech/n8n.svg" alt="" width="32" height="32" loading="lazy"><span>n8n</span></li><li><img src="assets/tech/zapier.svg" alt="" width="32" height="32" loading="lazy"><span>Zapier</span></li><li><img src="assets/tech/make.svg" alt="" width="32" height="32" loading="lazy"><span>Make</span></li><li><img src="assets/tech/docker.svg" alt="" width="32" height="32" loading="lazy"><span>Docker</span></li><li><img src="assets/tech/kubernetes.svg" alt="" width="32" height="32" loading="lazy"><span>Kubernetes</span></li><li><img src="assets/tech/terraform.svg" alt="" width="32" height="32" loading="lazy"><span>Terraform</span></li><li><img src="assets/tech/githubactions.svg" alt="" width="32" height="32" loading="lazy"><span>GitHub Actions</span></li></ul>
+      <ul class="marquee-track" aria-hidden="true"><li><img src="assets/tech/claude.svg" alt="" width="32" height="32" loading="lazy"><span>Claude</span></li><li><img src="assets/tech/googlegemini.svg" alt="" width="32" height="32" loading="lazy"><span>Gemini</span></li><li><img src="assets/tech/openai.svg" alt="" width="32" height="32" loading="lazy"><span>ChatGPT</span></li><li><img src="assets/tech/langchain.svg" alt="" width="32" height="32" loading="lazy"><span>LangChain</span></li><li><img src="assets/tech/n8n.svg" alt="" width="32" height="32" loading="lazy"><span>n8n</span></li><li><img src="assets/tech/zapier.svg" alt="" width="32" height="32" loading="lazy"><span>Zapier</span></li><li><img src="assets/tech/make.svg" alt="" width="32" height="32" loading="lazy"><span>Make</span></li><li><img src="assets/tech/docker.svg" alt="" width="32" height="32" loading="lazy"><span>Docker</span></li><li><img src="assets/tech/kubernetes.svg" alt="" width="32" height="32" loading="lazy"><span>Kubernetes</span></li><li><img src="assets/tech/terraform.svg" alt="" width="32" height="32" loading="lazy"><span>Terraform</span></li><li><img src="assets/tech/githubactions.svg" alt="" width="32" height="32" loading="lazy"><span>GitHub Actions</span></li></ul>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-col rv"><h3>IA y automatización</h3><div><span class="tag">Claude</span><span class="tag">Gemini</span><span class="tag">ChatGPT</span><span class="tag">LangChain</span><span class="tag">RAG</span><span class="tag">STT / TTS</span><span class="tag">OCR</span><span class="tag">n8n</span><span class="tag">Zapier</span><span class="tag">Make</span></div></div>
+      <div class="tech-col rv"><h3>Web y móvil</h3><div><span class="tag">Angular</span><span class="tag">React · Next.js</span><span class="tag">Vue · Nuxt</span><span class="tag">Svelte</span><span class="tag">TypeScript</span><span class="tag">Laravel · PHP</span><span class="tag">Flutter</span><span class="tag">Kotlin</span><span class="tag">Swift</span></div></div>
+      <div class="tech-col rv"><h3>Backend y nube</h3><div><span class="tag">Java · Spring</span><span class="tag">.NET · C#</span><span class="tag">Python · FastAPI · Django</span><span class="tag">Node.js · NestJS</span><span class="tag">Rust</span><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Google Cloud</span><span class="tag">Docker · Kubernetes</span><span class="tag">Terraform</span></div></div>
+      <div class="tech-col rv"><h3>Datos e integración</h3><div><span class="tag">Oracle</span><span class="tag">SQL Server</span><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">DynamoDB</span><span class="tag">Firebase</span><span class="tag">ETLs · Airflow</span><span class="tag">HL7 / FHIR</span></div></div>
     </div>
 
-    <div style="margin-top:100px">
-      <span class="eyebrow rv">Modelos de trabajo</span>
-      <h2 class="rv">Elija cómo trabajamos juntos</h2>
-      <div class="models">
-        <div class="model rv"><small>Alcance definido</small><h3>Proyecto cerrado</h3><p>Precio y cronograma fijos para un objetivo puntual. Ideal para un primer trabajo conjunto.</p></div>
-        <div class="model rv"><small>Mensual</small><h3>Servicio gestionado</h3><p>Los agentes y automatizaciones operando, monitoreados y mejorados de forma continua por nosotros.</p></div>
-        <div class="model rv"><small>Por tiempo</small><h3>Equipo dedicado</h3><p>Ingenieros integrados a su operación, con prioridades que usted define cada semana.</p></div>
-      </div>
-      <div class="expect">
-        <div class="rv"><h4>QUÉ NECESITAMOS DE SU LADO</h4><ul><li>Una persona que conozca el proceso a fondo</li><li>Acceso de lectura a los sistemas involucrados</li><li>Definición de qué información puede procesar la IA</li><li>Un criterio claro de éxito para el piloto</li></ul></div>
-        <div class="rv"><h4>QUÉ VE USTED EN LAS PRIMERAS SEMANAS</h4><ul><li>El proceso mapeado y medido</li><li>El agente o la automatización funcionando sobre casos reales</li><li>Indicadores comparables contra la línea base</li><li>Una decisión informada sobre si escalar</li></ul></div>
-      </div>
+    <div class="models">
+      <div class="model rv"><small>Alcance definido</small><h3>Proyecto cerrado</h3><p class="muted">Precio y cronograma fijos para un objetivo puntual. Ideal para empezar.</p></div>
+      <div class="model hi rv"><small>Mensual</small><h3>Servicio gestionado</h3><p class="muted">Agentes, nube y automatizaciones operando, monitoreados y mejorados por nosotros.</p></div>
+      <div class="model rv"><small>Por tiempo</small><h3>Equipo dedicado</h3><p class="muted">Ingenieros integrados a su operación, con prioridades que usted define cada semana.</p></div>
     </div>
   </div>
 </section>
 
-<section class="cta" id="contacto">
-  <div class="glow a"></div>
-  <div class="wrap">
-    <span class="eyebrow rv">Hablemos</span>
-    <h2 class="rv">Vea un agente de <span class="grad">voz y texto</span> funcionando en 20 minutos.</h2>
-    <p class="lead rv">Sin costo. Evaluamos juntos qué proceso de su organización tiene el mayor retorno al automatizarlo.</p>
-    <div class="cta-row rv">
-      <a class="btn btn-primary" href="mailto:contacto@devia.dev?subject=Solicitud%20de%20demostraci%C3%B3n">Solicitar demostración <span aria-hidden="true">→</span></a>
-      <a class="btn btn-ghost" href="#soluciones">Revisar soluciones</a>
+<section class="dark" id="contacto">
+  <div class="wrap contact-grid">
+    <div class="rv">
+      <span class="pill">Hablemos</span>
+      <h2>Agende una llamada de <span class="hl">30 minutos</span>.</h2>
+      <p class="muted">Sin costo. Revisamos juntos qué proceso de su organización tiene el mayor retorno.</p>
+      <ul class="checks">
+        <li>Demostración de agentes de IA funcionando</li>
+        <li>Revisión de su arquitectura en la nube</li>
+        <li>Siguientes pasos claros, sin compromiso</li>
+      </ul>
+      <p class="muted">¿Prefiere escribir? <a class="hl" href="mailto:deviatechsas@gmail.com" target="_blank">deviatechsas@gmail.com</a></p>
     </div>
+    <div class="calendly-inline-widget rv" data-url="https://calendly.com/mroserov1/30min?hide_gdpr_banner=1&amp;primary_color=113c39"></div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <img src="assets/logo-dark-cream.png" alt="DevIA">
-    <span>© 2026 DevIA · Soluciones inteligentes para la transformación digital</span>
+    <img src="assets/brand/devia-principal-oscuro.svg" alt="DevIA Tech" width="232" height="72">
+    <nav aria-label="Pie de página"><a href="#servicios">Servicios</a><a href="#certificaciones">Certificaciones</a><a href="#portafolio">Portafolio</a><a href="#contacto">Contacto</a></nav>
+    <span>© 2026 DevIA</span>
   </div>
 </footer>
 
-<script>
-const nav=document.getElementById('nav');
-const onScroll=()=>nav.classList.toggle('scrolled',scrollY>20);
-addEventListener('scroll',onScroll,{passive:true});onScroll();
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
-</script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
