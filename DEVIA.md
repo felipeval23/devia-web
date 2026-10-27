@@ -119,7 +119,11 @@ Colores planos, sin degradados de marca. Las secciones alternan oscuro/claro.
 
 - HTML estático sin build: `index.html`, `assets/css/styles.css`, `assets/js/main.js`.
 - Sin frameworks CSS. Grid y flex nativos.
-- Calendly: widget oficial (`assets.calendly.com/assets/external/widget.js`). Los botones con clase `js-calendly` abren el popup; la sección `#contacto` contiene el widget inline.
+- **Calendly se carga bajo demanda** (`loadCalendly()` en `main.js`; pesa ~10 MB). Los botones `.js-calendly` lo cargan al hacer clic y abren el popup (si falla o tarda más de 4 s, abren calendly.com). El calendario de `#calendly-embed` se **precarga después del evento `load`, cuando el navegador queda libre** (`requestIdleCallback`, máx. 3 s); si el usuario llega antes a `#contacto` (600px de margen), se carga en ese momento. Con ahorro de datos o red 2G/3G solo se carga al acercarse. **No volver a poner `widget.js` ni `widget.css` en el `<head>`.**
+- **Fuentes locales** en `assets/fonts/` (woff2, subconjunto latino): Funnel Display 600, Inter variable (400–600), Space Grotesk variable (500–600). Declaradas con `@font-face` al inicio de `styles.css`; las dos primeras se precargan. Si se necesita otro peso, descargarlo de Google Fonts y agregarlo ahí; no volver a enlazar `fonts.googleapis.com`.
+- **Imágenes:** insignias en WebP de 240px (`assets/certs/*.webp`); SVG de `assets/tech/` y `assets/brand/` optimizados con SVGO. El logo del menú y el isotipo del hero llevan `fetchpriority="high"`; el resto, `loading="lazy"` para no competir con la primera pantalla, y tras la carga inicial `main.js` las pasa a `eager` para tenerlas en caché antes del scroll.
+- Publicado en **Vercel**. `vercel.json` define la caché: fuentes 1 año `immutable`; imágenes (`brand`, `certs`, `tech`) 30 días; CSS/JS 1 hora (con `stale-while-revalidate`). Si se reemplaza una fuente, **cambiar el nombre del archivo**; si se reemplaza una imagen con el mismo nombre, puede tardar hasta 30 días en verse en navegadores que ya la tenían.
+- Para probar en local usar un servidor (`npx serve .` o `python3 -m http.server`); abrir `index.html` con doble clic (`file://`) produce errores de CORS en fuentes y manifest que no existen en producción.
 - Animaciones: `IntersectionObserver` (clase `.rv` → `.in`), parallax en `[data-parallax-speed]`, proceso sticky en `.process`. Todas respetan `prefers-reduced-motion`.
 - Migrar a Astro solo si se agrega blog, múltiples páginas o i18n.
 

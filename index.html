@@ -16,10 +16,8 @@
 <link rel="icon" href="assets/brand/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/brand/favicon-180.png">
 <link rel="manifest" href="assets/brand/site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<link rel="preload" href="assets/fonts/funnel-display-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 <link href="assets/css/styles.css" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"DevIA","description":"Ingeniería de software e inteligencia artificial: agentes conversacionales, soluciones en AWS, software a medida, desarrollo móvil y bases de datos.","email":"deviatechsas@gmail.com","logo":"assets/brand/favicon-512.png","areaServed":"Colombia","knowsAbout":["Sector público","Energía","Oil & Gas","Inteligencia artificial","Amazon Web Services","Microsoft Azure","Google Cloud","Anthropic Claude","Desarrollo móvil","Bases de datos"]}
@@ -29,7 +27,7 @@
 
 <nav class="nav" id="nav" aria-label="Principal">
   <div class="wrap">
-    <a class="logo" href="#inicio" aria-label="DevIA, inicio"><img src="assets/brand/devia-principal-oscuro.svg" alt="DevIA Tech" width="219" height="68"></a>
+    <a class="logo" href="#inicio" aria-label="DevIA, inicio"><img src="assets/brand/devia-principal-oscuro.svg" alt="DevIA Tech" width="219" height="68" fetchpriority="high"></a>
     <ul id="menu">
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#servicios">Servicios</a></li>
@@ -45,7 +43,7 @@
 </nav>
 
 <header class="hero dark" id="inicio">
-  <img class="hero-iso" src="assets/brand/devia-isotipo-lima.svg" alt="" aria-hidden="true">
+  <img class="hero-iso" src="assets/brand/devia-isotipo-lima.svg" alt="" aria-hidden="true" fetchpriority="high">
   <div class="wrap">
     <span class="pill rv">Software · Datos · Inteligencia real</span>
     <h1 class="rv">Software e <span class="hl">inteligencia artificial</span> que mueven su operación.</h1>
@@ -57,10 +55,10 @@
     <div class="certs rv">
       <small>Equipo certificado en</small>
       <div class="cert-row">
-        <span class="cert"><img src="assets/certs/aws-solutions-architect-associate.png" alt="" width="40" height="40">AWS Solutions Architect</span>
-        <span class="cert"><img src="assets/certs/claude-certified-architect.png" alt="" width="40" height="40">Claude Certified Architect</span>
-        <span class="cert"><img src="assets/certs/azure-fundamentals.png" alt="" width="40" height="40">Microsoft Azure</span>
-        <span class="cert"><img src="assets/certs/gcp-professional-cloud-architect.png" alt="" width="40" height="40">Google Cloud Architect</span>
+        <span class="cert"><img src="assets/certs/aws-solutions-architect-associate.webp" alt="" width="40" height="40">AWS Solutions Architect</span>
+        <span class="cert"><img src="assets/certs/claude-certified-architect.webp" alt="" width="40" height="40">Claude Certified Architect</span>
+        <span class="cert"><img src="assets/certs/azure-fundamentals.webp" alt="" width="40" height="40">Microsoft Azure</span>
+        <span class="cert"><img src="assets/certs/gcp-professional-cloud-architect.webp" alt="" width="40" height="40">Google Cloud Architect</span>
       </div>
     </div>
   </div>
@@ -174,10 +172,10 @@
       <p class="muted rv">Las certificaciones no son un adorno: definen cómo diseñamos arquitecturas seguras, costos predecibles y sistemas que escalan.</p>
     </div>
     <div class="cert-grid">
-      <div class="cert-card rv"><img class="badge" src="assets/certs/aws-solutions-architect-associate.png" alt="Insignia AWS Certified Solutions Architect – Associate" width="120" height="120" loading="lazy"><h3>AWS Certified Solutions Architect</h3><p>Arquitecturas bien diseñadas en AWS: seguridad, confiabilidad, rendimiento y costos.</p></div>
-      <div class="cert-card rv"><img class="badge" src="assets/certs/claude-certified-architect.png" alt="Insignia Claude Certified Architect de Anthropic" width="120" height="120" loading="lazy"><h3>Claude Certified Architect</h3><p>Agentes y aplicaciones con Claude: prompts, herramientas, RAG y evaluación.</p></div>
-      <div class="cert-card rv"><img class="badge" src="assets/certs/azure-fundamentals.png" alt="Insignia Microsoft Certified: Azure Fundamentals" width="120" height="120" loading="lazy"><h3>Microsoft Certified: Azure</h3><p>Despliegue e integración con el ecosistema Microsoft y Azure OpenAI.</p></div>
-      <div class="cert-card rv"><img class="badge" src="assets/certs/gcp-professional-cloud-architect.png" alt="Insignia Google Cloud Professional Cloud Architect" width="120" height="120" loading="lazy"><h3>Google Cloud Professional Architect</h3><p>Infraestructura, datos y servicios de IA sobre Google Cloud Platform.</p></div>
+      <div class="cert-card rv"><img class="badge" src="assets/certs/aws-solutions-architect-associate.webp" alt="Insignia AWS Certified Solutions Architect – Associate" width="120" height="120" loading="lazy"><h3>AWS Certified Solutions Architect</h3><p>Arquitecturas bien diseñadas en AWS: seguridad, confiabilidad, rendimiento y costos.</p></div>
+      <div class="cert-card rv"><img class="badge" src="assets/certs/claude-certified-architect.webp" alt="Insignia Claude Certified Architect de Anthropic" width="120" height="120" loading="lazy"><h3>Claude Certified Architect</h3><p>Agentes y aplicaciones con Claude: prompts, herramientas, RAG y evaluación.</p></div>
+      <div class="cert-card rv"><img class="badge" src="assets/certs/azure-fundamentals.webp" alt="Insignia Microsoft Certified: Azure Fundamentals" width="120" height="120" loading="lazy"><h3>Microsoft Certified: Azure</h3><p>Despliegue e integración con el ecosistema Microsoft y Azure OpenAI.</p></div>
+      <div class="cert-card rv"><img class="badge" src="assets/certs/gcp-professional-cloud-architect.webp" alt="Insignia Google Cloud Professional Cloud Architect" width="120" height="120" loading="lazy"><h3>Google Cloud Professional Architect</h3><p>Infraestructura, datos y servicios de IA sobre Google Cloud Platform.</p></div>
     </div>
     <div class="team rv">
       <div>
@@ -400,19 +398,18 @@
       </ul>
       <p class="muted">¿Prefiere escribir? <a class="hl" href="mailto:deviatechsas@gmail.com" target="_blank">deviatechsas@gmail.com</a></p>
     </div>
-    <div class="calendly-inline-widget rv" data-url="https://calendly.com/mroserov1/30min?hide_gdpr_banner=1&amp;primary_color=113c39"></div>
+    <div class="calendly-embed rv" id="calendly-embed"></div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <img src="assets/brand/devia-principal-oscuro.svg" alt="DevIA Tech" width="232" height="72">
+    <img src="assets/brand/devia-principal-oscuro.svg" alt="DevIA Tech" width="232" height="72" loading="lazy">
     <nav aria-label="Pie de página"><a href="#servicios">Servicios</a><a href="#certificaciones">Certificaciones</a><a href="#portafolio">Portafolio</a><a href="#contacto">Contacto</a></nav>
     <span>© 2026 DevIA</span>
   </div>
 </footer>
 
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

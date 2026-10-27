@@ -17,13 +17,60 @@ menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   burger.setAttribute('aria-expanded', false);
 }));
 
-// Calendly popup; si el script no cargó, abre la página en otra pestaña
+// Calendly se carga bajo demanda: pesa ~10 MB y la mayoría de visitas no lo usa
+let calendlyReady;
+const loadCalendly = () => calendlyReady ??= new Promise((resolve, reject) => {
+  const css = document.createElement('link');
+  css.rel = 'stylesheet';
+  css.href = 'https://assets.calendly.com/assets/external/widget.css';
+  document.head.append(css);
+  const s = document.createElement('script');
+  s.src = 'https://assets.calendly.com/assets/external/widget.js';
+  s.onload = () => resolve(window.Calendly);
+  s.onerror = () => { calendlyReady = null; reject(); };
+  document.head.append(s);
+});
+
+// popup; si no carga en 4 s, se abre la página de Calendly como respaldo
 document.querySelectorAll('.js-calendly').forEach(btn => btn.addEventListener('click', e => {
-  if (window.Calendly) {
-    e.preventDefault();
-    Calendly.initPopupWidget({ url: CALENDLY_URL });
-  }
+  if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+  e.preventDefault();
+  const fallback = setTimeout(() => location.assign(btn.href), 4000);
+  loadCalendly()
+    .then(C => { clearTimeout(fallback); C.initPopupWidget({ url: CALENDLY_URL }); })
+    .catch(() => { clearTimeout(fallback); location.assign(btn.href); });
 }));
+
+// calendario integrado: se precarga cuando la página termina y el navegador queda libre;
+// el observer cubre a quien llega a #contacto antes de eso. Con ahorro de datos o red lenta solo carga al acercarse.
+const embed = document.getElementById('calendly-embed');
+let embedStarted = false;
+const startEmbed = () => {
+  if (embedStarted || !embed) return;
+  embedStarted = true;
+  loadCalendly()
+    .then(C => C.initInlineWidget({ url: CALENDLY_URL, parentElement: embed }))
+    .catch(() => { embedStarted = false; });
+};
+if (embed) {
+  const embedIo = new IntersectionObserver(entries => {
+    if (!entries[0].isIntersecting) return;
+    embedIo.disconnect();
+    startEmbed();
+  }, { rootMargin: '600px 0px' });
+  embedIo.observe(embed);
+}
+
+const conn = navigator.connection;
+const slowNet = conn && (conn.saveData || /2g|3g/.test(conn.effectiveType));
+const whenIdle = fn => 'requestIdleCallback' in window ? requestIdleCallback(fn, { timeout: 3000 }) : setTimeout(fn, 1500);
+const afterLoad = fn => document.readyState === 'complete' ? whenIdle(fn) : addEventListener('load', () => whenIdle(fn), { once: true });
+
+afterLoad(() => {
+  // imágenes diferidas (logos, insignias, portafolio) a caché antes de que el usuario llegue
+  document.querySelectorAll('img[loading="lazy"]').forEach(img => { img.loading = 'eager'; });
+  if (!slowNet) startEmbed();
+});
 
 // reveal
 const io = new IntersectionObserver(entries => entries.forEach(e => {
